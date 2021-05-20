@@ -77,9 +77,11 @@ let newArray = allRows.map((item) => {
     console.log(arr);
     return arr;
   });
-newArray.sort(function (a, b) {
-  return a.population - b.population;
-});
+// function sortByPopulation(newArray) {
+//   newArray.sort((a, b) => a.population > b.population ? 1 : -1);
+// };
+// sortByPopulation(newArray);
+newArray.sort(function(a, b){return a.population - b.population});
 console.log(newArray);
 // getData();
 // async function getData() {
