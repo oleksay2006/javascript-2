@@ -20,29 +20,29 @@
 15,30,Львов,200000
 10,20,Одесса,200000
 10,20,Киев,200000 */
-function parse() {
-  let textarea = document.querySelector('textarea');
-  let myList = textarea.value.split('\n');
-  console.log(myList);
+// function parse() {
+//   let textarea = document.querySelector('textarea');
+//   let myList = textarea.value.split('\n');
+//   console.log(myList);
 
-  let newArray = myList.map((item) => {
-    console.log(item);
-    let arr = item.split(',');
-    let arr2 = [];
-    arr.map((item_2, index) => {
-      let s = [];
-      if (index == 0) { s['x'] = item_2 }
-      if (index == 1) { s['y'] = item_2 }
-      if (index == 2) { s['city'] = item_2 }
-      if (index == 3) { s['popul'] = item_2 }
-      arr2.push(s);
-    })
-    return arr2;
-  });
+//   let newArray = myList.map((item) => {
+//     console.log(item);
+//     let arr = item.split(',');
+//     let arr2 = [];
+//     arr.map((item_2, index) => {
+//       let s = [];
+//       if (index == 0) { s['x'] = item_2 }
+//       if (index == 1) { s['y'] = item_2 }
+//       if (index == 2) { s['city'] = item_2 }
+//       if (index == 3) { s['popul'] = item_2 }
+//       arr2.push(s);
+//     })
+//     return arr2;
+//   });
 
-  // console.log(newArray);
-  newArray = newArray.map(item);
-}
+//   // console.log(newArray);
+//   newArray = newArray.map(item);
+// }
 
 // $.ajax({
 //   url: 'what.csv',
@@ -65,7 +65,6 @@ console.log(allRows);
 let newArray = allRows.map((item) => {
     // console.log(item);
     let arr = item.split(',');
-    console.log(arr);
     // let arr2 = [];
     arr.map((item_2, index) => {
     //   let s = [];
@@ -75,6 +74,7 @@ let newArray = allRows.map((item) => {
       if (index == 3) { arr[3] = `population: ${item_2}` }
     //   arr2.push(s);
     })
+    console.log(arr);
     // return arr;
   });
 
