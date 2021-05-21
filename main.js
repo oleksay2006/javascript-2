@@ -58,6 +58,7 @@ let csvFileText = "10,20,Кропивницкий,200000 \n" +
 "15,30,Львов,325000 \n"
 + "10,20,Одесса,2050000 \n"
 + "10,20,Киев,32500000";
+
 var allRows = csvFileText.split('\n');
 console.log(allRows);
 
@@ -77,15 +78,29 @@ let newArray = allRows.map((item) => {
     console.log(arr);
     return arr;
   });
-// function sortByPopulation(newArray) {
-//   newArray.sort((a, b) => a.population > b.population ? 1 : -1);
-// };
-// sortByPopulation(newArray);
-newArray.sort(function(a, b){return a.population - b.population});
+function sortByPopulation(newArray) {
+  newArray.sort((a, b) => a.population > b.population ? 1 : -1);
+};
+sortByPopulation(newArray);
 console.log(newArray);
+let top_10 = newArray.slice(0,10)
+
+
+
+
+// let result = newArray.reduce((combo, item) => {
+//     combo[item.name] = item.value;
+//     return combo;
+// }, {});
+
+// console.log(result);
+
+
 // getData();
 // async function getData() {
 //   const response = await fetch('what.csv');
 //   const data = await response.text();
 //   console.log(data);
 // }
+
+
