@@ -175,10 +175,11 @@ function get(csvFileText) {
       return accumulator;
     }, {});
   console.log(topCities);
+  console.log(topCity);
   return (resultText) => {
     topCities.forEach((city) => {
       if (resultText.includes(city)) {
-        const { population, rating } = topCity[city];
+        let { population, rating } = topCity[city];
         resultText = resultText.replace(
           city,
           `${city} (население: ${population}, рейтинг: ${rating})`
@@ -191,6 +192,6 @@ function get(csvFileText) {
 
 console.log(
   get(csvFileText)(
-    "Одесса крупнейший морской курорт Украины, Киев столица и крупнейший город Украины"
+    "Харьков второй по количеству населения город в Украине, Киев столица Украины"
   )
 );
